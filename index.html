@@ -78,31 +78,37 @@
    </div>
   </header>
 
-  <main class="w-full">
-   <!-- Seção de Literatura e Composição Musical -->
+  <!-- Seção de Literatura e Composição Musical -->
    <section id="literatura" class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
     <p class="eyebrow text-[#83622d]">01 / Literatura & Música</p>
     <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Quando o mar entra na narrativa</h2>
     <p class="mt-5 max-w-2xl leading-relaxed text-[#374c59]">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
     
-    <!-- Player de Áudio Nativo Integrado com a Música Gerada -->
-    <div class="panel mt-6 rounded-lg bg-[#fffdf8] p-6 sm:p-8">
-      <h3 class="font-semibold text-lg text-[#102a3c] mb-2">🎵 Ouça a Composição Inspirada no Canto VI</h3>
-      <p class="text-xs sm:text-sm text-[#4c6170] mb-4">Madrigal Renascentista (Alaúde, Viola da Gamba e Vocais Clássicos)</p>
-      <audio controls class="w-full">
-        <source src="musica.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-      </audio>
-    </div>
-
-    <div class="panel mt-9 rounded-lg border-l-4 border-l-[#a17c3f] bg-[#fffdf8] p-6 sm:p-9">
+    <!-- Bloco único unificado -->
+    <div class="panel mt-8 rounded-lg border-l-4 border-l-[#a17c3f] bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
+     
+     <!-- 1. O "E se" e o trecho vêm primeiro -->
      <p class="eyebrow text-[#83622d]">e se transformar um trecho em melodia ...</p>
-     <blockquote class="mt-5 max-w-2xl italic leading-relaxed text-[#354a57] text-xl">"O mar com a tempestade em cima brada;<br>
+     <blockquote class="mt-4 max-w-2xl italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
 Os ventos assoprando vão irados;<br>
 A noite vem escura e carregada;<br>
 Os raios pelo ar vão faiscados;<br>
 O mastro de assobiar já não cessava;<br>
 A vela, que a tormenta grande inchava."</blockquote>
+
+     <!-- Linha divisória interna sutil para separar o conceito da audição -->
+     <hr class="my-6 border-t border-[#c9a76b]/20">
+
+     <!-- 2. O Player de Áudio logo em seguida -->
+     <div>
+       <h3 class="font-semibold text-lg text-[#102a3c] mb-1">🎵 Ouça a Composição Inspirada no Canto VI</h3>
+       <p class="text-xs sm:text-sm text-[#4c6170] mb-4">Madrigal Renascentista (Alaúde, Viola da Gamba e Vocais Clássicos)</p>
+       <audio controls class="w-full">
+         <source src="musica.mp3" type="audio/mpeg">
+         Seu navegador não suporta o elemento de áudio.
+       </audio>
+     </div>
+
     </div>
    </section>
 
