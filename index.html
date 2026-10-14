@@ -13,7 +13,7 @@
     html { scroll-behavior:smooth; }
     body { margin:0; font-family:'Libre Franklin',sans-serif; color:var(--navy); background:#f8f5ed; }
     
-    /* Aplicação da fonte American Typewriter nos títulos */
+    /* Fonte American Typewriter para os títulos */
     h1, h2, h3, .display { 
       font-family: 'American Typewriter', 'Courier New', Courier, Georgia, serif; 
     }
@@ -24,10 +24,17 @@
       radial-gradient(circle at 85% 12%,rgba(161,124,63,.09),transparent 37%);
     }
     .rule { border-color:rgba(161,124,63,.38); }
-    .panel { border:1px solid rgba(16,42,60,.14); box-shadow:0 12px 35px rgba(16,42,60,.055); }
+    
+    /* Padronização visual de TODOS os cartões */
+    .panel { 
+      border: 1px solid rgba(16,42,60,.14); 
+      border-left: 4px solid var(--gold) !important; 
+      box-shadow: 0 12px 35px rgba(16,42,60,.055); 
+    }
+    
     .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:700; }
     
-    /* Menu mobile com scroll horizontal suave */
+    /* Scroll horizontal limpo no menu mobile */
     .nav-container::-webkit-scrollbar { display: none; }
     .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
     
@@ -54,8 +61,9 @@
 <body class="w-full paper">
   <div id="progress" role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="fixed top-0 left-0 z-50 h-1 bg-[#a17c3f]" style="width:0%"></div>
   
+  <!-- Barra de Navegação -->
   <nav aria-label="Navegação pelas seções" class="sticky top-0 z-40 w-full border-b rule bg-[#f8f5ed]/95 backdrop-blur">
-   <div class="nav-container mx-auto flex max-w-6xl items-center gap-2 overflow-x-auto px-3 py-2 sm:px-6">
+   <div class="nav-container mx-auto flex max-w-4xl items-center gap-2 overflow-x-auto px-4 py-2 sm:px-6">
     <a class="nav-link" href="#literatura">Literatura & Música</a> 
     <a class="nav-link" href="#instrumentos">Instrumentos</a> 
     <a class="nav-link" href="#galeria">Galeria</a> 
@@ -63,10 +71,11 @@
    </div>
   </nav>
 
+  <!-- Cabeçalho Principal -->
   <header id="inicio" class="relative overflow-hidden bg-[#102a3c] text-white">
    <div class="pointer-events-none absolute -right-20 top-8 h-72 w-72 rounded-full border border-[#a17c3f]/30 sm:h-96 sm:w-96"></div>
    <div class="pointer-events-none absolute -right-6 top-24 h-48 w-48 rounded-full border border-[#a17c3f]/20 sm:h-72 sm:w-72"></div>
-   <div class="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+   <div class="relative mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
     <p class="eyebrow mb-7 inline-block rounded border border-[#c9a76b] px-3 py-2 text-[#e4c894]">Mostra Cultural 2026</p>
     <h1 class="max-w-3xl font-semibold leading-[1.12] text-white text-3xl sm:text-5xl">A Tempestade e a Física Náutica</h1>
     <p class="mt-5 text-[#e4c894] text-xl">Canto VI de Os Lusíadas</p>
@@ -78,28 +87,27 @@
    </div>
   </header>
 
-  <!-- Seção de Literatura e Composição Musical -->
-   <section id="literatura" class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+  <main class="w-full">
+   
+   <!-- 01 / Literatura e Composição Musical -->
+   <section id="literatura" class="mx-auto max-w-4xl px-5 py-16 sm:px-8">
     <p class="eyebrow text-[#83622d]">01 / Literatura & Música</p>
     <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Quando o mar entra na narrativa</h2>
-    <p class="mt-5 max-w-2xl leading-relaxed text-[#374c59]">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
+    <p class="mt-4 leading-relaxed text-[#374c59]">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
     
-    <!-- Bloco único unificado -->
-    <div class="panel mt-8 rounded-lg border-l-4 border-l-[#a17c3f] bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
+    <!-- Cartão Único com Borda Dourada -->
+    <div class="panel mt-8 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
      
-     <!-- 1. O "E se" e o trecho vêm primeiro -->
      <p class="eyebrow text-[#83622d]">e se transformar um trecho em melodia ...</p>
-     <blockquote class="mt-4 max-w-2xl italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
+     <blockquote class="mt-4 italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
 Os ventos assoprando vão irados;<br>
 A noite vem escura e carregada;<br>
 Os raios pelo ar vão faiscados;<br>
 O mastro de assobiar já não cessava;<br>
 A vela, que a tormenta grande inchava."</blockquote>
 
-     <!-- Linha divisória interna sutil para separar o conceito da audição -->
      <hr class="my-6 border-t border-[#c9a76b]/20">
 
-     <!-- 2. O Player de Áudio logo em seguida -->
      <div>
        <h3 class="font-semibold text-lg text-[#102a3c] mb-1">🎵 Ouça a Composição Inspirada no Canto VI</h3>
        <p class="text-xs sm:text-sm text-[#4c6170] mb-4">Madrigal Renascentista (Alaúde, Viola da Gamba e Vocais Clássicos)</p>
@@ -112,16 +120,19 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- Seção de Instrumentos -->
+   <!-- 02 / Instrumentos -->
    <section id="instrumentos" class="bg-[#eaece8] px-5 py-16 sm:px-8">
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-4xl">
      <p class="eyebrow text-[#83622d]">02 / Instrumentos</p>
      <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Dois modos de observar o céu</h2>
-     <p class="mt-4 max-w-2xl text-[#374c59]">Toque em cada instrumento para comparar suas características.</p>
+     <p class="mt-4 text-[#374c59]">Toque em cada instrumento para comparar suas características.</p>
+     
      <div role="tablist" aria-label="Instrumentos náuticos" class="mt-8 flex w-full max-w-md gap-2">
       <button id="tab-astrolabio" role="tab" aria-controls="panel-astrolabio" aria-selected="true" tabindex="0" type="button" class="tab min-h-12 flex-1 rounded-md px-4 font-semibold text-sm sm:text-base">Astrolábio</button> 
       <button id="tab-quadrante" role="tab" aria-controls="panel-quadrante" aria-selected="false" tabindex="-1" type="button" class="tab min-h-12 flex-1 rounded-md px-4 font-semibold text-sm sm:text-base">Quadrante</button>
      </div>
+     
+     <!-- Cartão do Astrolábio com Borda Dourada -->
      <div id="panel-astrolabio" role="tabpanel" aria-labelledby="tab-astrolabio" tabindex="0" class="panel mt-4 rounded-lg bg-[#fffdf8] p-6 sm:p-9">
       <div class="grid gap-7 sm:grid-cols-[auto_1fr] sm:items-center">
        <div class="flex h-36 w-36 items-center justify-center rounded-full border-2 border-[#a17c3f] bg-[#f5f0e5] mx-auto sm:mx-0">
@@ -130,10 +141,12 @@ A vela, que a tormenta grande inchava."</blockquote>
        <div>
         <h3 class="font-semibold text-xl text-[#102a3c]">Astrolábio</h3>
         <p class="eyebrow mt-3 text-[#83622d]">Precisão</p>
-        <p class="mt-4 max-w-xl leading-relaxed text-[#374c59]">Sua escala circular auxiliava a observar posições dos astros e a obter referências para a orientação durante a navegação.</p>
+        <p class="mt-4 leading-relaxed text-[#374c59]">Sua escala circular auxiliava a observar posições dos astros e a obter referências para a orientação durante a navegação.</p>
        </div>
       </div>
      </div>
+     
+     <!-- Cartão do Quadrante com Borda Dourada -->
      <div id="panel-quadrante" role="tabpanel" aria-labelledby="tab-quadrante" tabindex="0" hidden class="panel mt-4 rounded-lg bg-[#fffdf8] p-6 sm:p-9">
       <div class="grid gap-7 sm:grid-cols-[auto_1fr] sm:items-center">
        <div class="flex h-36 w-36 items-center justify-center rounded-tr-full border-2 border-[#a17c3f] bg-[#f5f0e5] mx-auto sm:mx-0">
@@ -142,18 +155,20 @@ A vela, que a tormenta grande inchava."</blockquote>
        <div>
         <h3 class="font-semibold text-xl text-[#102a3c]">Quadrante</h3>
         <p class="eyebrow mt-3 text-[#83622d]">Fio de prumo</p>
-        <p class="mt-4 max-w-xl leading-relaxed text-[#374c59]">A escala de um quarto de círculo e o fio de prumo permitiam observar a inclinação em relação a uma referência vertical.</p>
+        <p class="mt-4 leading-relaxed text-[#374c59]">A escala de um quarto de círculo e o fio de prumo permitiam observar a inclinação em relação a uma referência vertical.</p>
        </div>
       </div>
      </div>
+
     </div>
    </section>
 
-   <!-- Seção Galeria com Modal -->
-   <section id="galeria" class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+   <!-- 03 / Galeria -->
+   <section id="galeria" class="mx-auto max-w-4xl px-5 py-16 sm:px-8">
     <p class="eyebrow text-[#83622d]">03 / Galeria</p>
     <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">As réplicas do projeto</h2>
     <p class="mt-4 text-[#374c59]">Fotos reais das peças produzidas para o trabalho.</p>
+    
     <div class="mt-8 grid gap-5 sm:grid-cols-2">
      <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
       <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
@@ -164,6 +179,7 @@ A vela, que a tormenta grande inchava."</blockquote>
        <button data-gallery="caravel" type="button" class="mt-4 min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c] px-5 font-semibold text-[#102a3c] hover:bg-[#eaece8]">Ampliar espaço reservado</button>
       </div>
      </article>
+     
      <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
       <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
        <p class="rounded bg-[#fffdf8]/90 px-4 py-3 font-semibold text-[#455867]">Adicionar foto da réplica</p>
@@ -176,11 +192,12 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- Seção de Princípios de Física Interativos -->
+   <!-- 04 / Princípios de Física -->
    <section id="fisica" class="bg-[#eaece8] px-5 py-16 sm:px-8">
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-4xl">
      <p class="eyebrow text-[#83622d]">04 / Princípios de física</p>
      <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Ciência para encontrar um caminho</h2>
+     
      <div class="mt-8 grid gap-5 lg:grid-cols-2">
       
       <article class="panel rounded-lg bg-[#fffdf8] p-6">
@@ -231,7 +248,8 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <footer class="mx-auto flex w-full max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#c9a76b]/40 bg-[#102a3c] px-5 py-6 text-white text-center sm:text-left">
+   <!-- Rodapé -->
+   <footer class="mx-auto flex w-full max-w-4xl flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#c9a76b]/40 bg-[#102a3c] px-5 py-6 text-white text-center sm:text-left">
     <p class="text-[#e4c894]">Mostra Cultural 2026</p>
     <a href="#inicio" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-md bg-[#c9a76b] px-5 font-semibold text-[#102a3c] hover:bg-[#e4c894]">↑ Voltar ao topo</a>
    </footer>
@@ -297,7 +315,7 @@ A vela, que a tormenta grande inchava."</blockquote>
     closeModalButton.addEventListener('click', closeModal);
     modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
 
-    // Botões interativos de Física (Estrela Polar e Vetores)
+    // Botões interativos de Física
     for (const [buttonId, targetId] of [
       ['star-toggle', 'star-indicator'], ['vector-toggle', 'vector-diagram']
     ]) {
