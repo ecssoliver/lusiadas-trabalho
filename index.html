@@ -13,8 +13,8 @@
     html { scroll-behavior:smooth; }
     body { margin:0; font-family:'Libre Franklin',sans-serif; color:var(--navy); background:#f8f5ed; }
     
-    /* Fonte American Typewriter para os títulos */
-    h1, h2, h3, .display { 
+    /* Fonte American Typewriter para títulos e cabeçalhos de seção */
+    h1, h2, h3, .display, .eyebrow { 
       font-family: 'American Typewriter', 'Courier New', Courier, Georgia, serif; 
     }
 
@@ -32,13 +32,19 @@
       box-shadow: 0 12px 35px rgba(16,42,60,.055); 
     }
     
-    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:700; }
+    /* Aumentado o tamanho e destaque dos títulos das seções (01 / LITERATURA, 02 / INSTRUMENTOS...) */
+    .eyebrow { 
+      text-transform: uppercase; 
+      letter-spacing: .12em; 
+      font-size: 0.95rem; 
+      font-weight: 700; 
+    }
     
     /* Scroll horizontal limpo no menu mobile */
     .nav-container::-webkit-scrollbar { display: none; }
     .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
     
-    .nav-link { white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 12px; border-radius:6px; font-size:0.9rem; }
+    .nav-link { white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 12px; border-radius:6px; font-size:0.95rem; }
     .nav-link:hover, .nav-link[aria-current="location"] { background:rgba(161,124,63,.15); }
     button, a { -webkit-tap-highlight-color:transparent; }
     button:focus-visible, a:focus-visible { outline:3px solid #b7893e; outline-offset:3px; }
@@ -64,6 +70,7 @@
   <!-- Barra de Navegação -->
   <nav aria-label="Navegação pelas seções" class="sticky top-0 z-40 w-full border-b rule bg-[#f8f5ed]/95 backdrop-blur">
    <div class="nav-container mx-auto flex max-w-4xl items-center gap-2 overflow-x-auto px-4 py-2 sm:px-6">
+    <a class="nav-link" href="#inicio">Início</a> 
     <a class="nav-link" href="#literatura">Literatura & Música</a> 
     <a class="nav-link" href="#instrumentos">Instrumentos</a> 
     <a class="nav-link" href="#galeria">Galeria</a> 
@@ -90,39 +97,39 @@
   <main class="w-full">
    
    <!-- 01 / Literatura e Composição Musical -->
-   <section id="literatura" class="mx-auto max-w-4xl px-5 py-16 sm:px-8">
-    <p class="eyebrow text-[#83622d]">01 / Literatura & Música</p>
-    <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Quando o mar entra na narrativa</h2>
-    <p class="mt-4 leading-relaxed text-[#374c59]">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
-    
-    <!-- Cartão Único com Borda Dourada -->
-    <div class="panel mt-8 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
-     
-     <p class="eyebrow text-[#83622d]">e se transformar um trecho em melodia ...</p>
-     <blockquote class="mt-4 italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
+   <section id="literatura" class="py-16">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+      <p class="eyebrow text-[#83622d]">01 / Literatura & Música</p>
+      <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Quando o mar entra na narrativa</h2>
+      <p class="mt-4 leading-relaxed text-[#374c59]">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
+      
+      <!-- Cartão Único com Borda Dourada -->
+      <div class="panel mt-8 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
+       <p class="eyebrow text-[#83622d]">e se transformar um trecho em melodia ...</p>
+       <blockquote class="mt-4 italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
 Os ventos assoprando vão irados;<br>
 A noite vem escura e carregada;<br>
 Os raios pelo ar vão faiscados;<br>
 O mastro de assobiar já não cessava;<br>
 A vela, que a tormenta grande inchava."</blockquote>
 
-     <hr class="my-6 border-t border-[#c9a76b]/20">
+       <hr class="my-6 border-t border-[#c9a76b]/20">
 
-     <div>
-       <h3 class="font-semibold text-lg text-[#102a3c] mb-1">🎵 Ouça a Composição Inspirada no Canto VI</h3>
-       <p class="text-xs sm:text-sm text-[#4c6170] mb-4">Madrigal Renascentista (Alaúde, Viola da Gamba e Vocais Clássicos)</p>
-       <audio controls class="w-full">
-         <source src="musica.mp3" type="audio/mpeg">
-         Seu navegador não suporta o elemento de áudio.
-       </audio>
-     </div>
-
+       <div>
+         <h3 class="font-semibold text-lg sm:text-xl text-[#102a3c] mb-1">🎵 Ouça a Composição Inspirada no Canto VI</h3>
+         <p class="text-xs sm:text-sm text-[#4c6170] mb-4">Madrigal Renascentista (Alaúde, Viola da Gamba e Vocais Clássicos)</p>
+         <audio controls class="w-full">
+           <source src="musica.mp3" type="audio/mpeg">
+           Seu navegador não suporta o elemento de áudio.
+         </audio>
+       </div>
+      </div>
     </div>
    </section>
 
    <!-- 02 / Instrumentos -->
-   <section id="instrumentos" class="bg-[#eaece8] px-5 py-16 sm:px-8">
-    <div class="mx-auto max-w-4xl">
+   <section id="instrumentos" class="bg-[#eaece8] py-16">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
      <p class="eyebrow text-[#83622d]">02 / Instrumentos</p>
      <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Dois modos de observar o céu</h2>
      <p class="mt-4 text-[#374c59]">Toque em cada instrumento para comparar suas características.</p>
@@ -164,37 +171,39 @@ A vela, que a tormenta grande inchava."</blockquote>
    </section>
 
    <!-- 03 / Galeria -->
-   <section id="galeria" class="mx-auto max-w-4xl px-5 py-16 sm:px-8">
-    <p class="eyebrow text-[#83622d]">03 / Galeria</p>
-    <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">As réplicas do projeto</h2>
-    <p class="mt-4 text-[#374c59]">Fotos reais das peças produzidas para o trabalho.</p>
-    
-    <div class="mt-8 grid gap-5 sm:grid-cols-2">
-     <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
-      <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
-       <p class="rounded bg-[#fffdf8]/90 px-4 py-3 font-semibold text-[#455867]">Adicionar foto da réplica</p>
-      </div>
-      <div class="p-5">
-       <h3 class="font-semibold text-xl text-[#102a3c]">Réplica da Caravela (+40 cm)</h3>
-       <button data-gallery="caravel" type="button" class="mt-4 min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c] px-5 font-semibold text-[#102a3c] hover:bg-[#eaece8]">Ampliar espaço reservado</button>
-      </div>
-     </article>
+   <section id="galeria" class="py-16">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+     <p class="eyebrow text-[#83622d]">03 / Galeria</p>
+     <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">As réplicas do projeto</h2>
+     <p class="mt-4 text-[#374c59]">Fotos reais das peças produzidas para o trabalho.</p>
      
-     <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
-      <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
-       <p class="rounded bg-[#fffdf8]/90 px-4 py-3 font-semibold text-[#455867]">Adicionar foto da réplica</p>
-      </div>
-      <div class="p-5">
-       <h3 class="font-semibold text-xl text-[#102a3c]">Réplica do Instrumento</h3>
-       <button data-gallery="instrument" type="button" class="mt-4 min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c] px-5 font-semibold text-[#102a3c] hover:bg-[#eaece8]">Ampliar espaço reservado</button>
-      </div>
-     </article>
+     <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
+       <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
+        <p class="rounded bg-[#fffdf8]/90 px-4 py-3 font-semibold text-[#455867]">Adicionar foto da réplica</p>
+       </div>
+       <div class="p-5">
+        <h3 class="font-semibold text-xl text-[#102a3c]">Réplica da Caravela (+40 cm)</h3>
+        <button data-gallery="caravel" type="button" class="mt-4 min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c] px-5 font-semibold text-[#102a3c] hover:bg-[#eaece8]">Ampliar espaço reservado</button>
+       </div>
+      </article>
+      
+      <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
+       <div class="photo-space flex aspect-[4/3] items-center justify-center p-6 text-center">
+        <p class="rounded bg-[#fffdf8]/90 px-4 py-3 font-semibold text-[#455867]">Adicionar foto da réplica</p>
+       </div>
+       <div class="p-5">
+        <h3 class="font-semibold text-xl text-[#102a3c]">Réplica do Instrumento</h3>
+        <button data-gallery="instrument" type="button" class="mt-4 min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c] px-5 font-semibold text-[#102a3c] hover:bg-[#eaece8]">Ampliar espaço reservado</button>
+       </div>
+      </article>
+     </div>
     </div>
    </section>
 
    <!-- 04 / Princípios de Física -->
-   <section id="fisica" class="bg-[#eaece8] px-5 py-16 sm:px-8">
-    <div class="mx-auto max-w-4xl">
+   <section id="fisica" class="bg-[#eaece8] py-16">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
      <p class="eyebrow text-[#83622d]">04 / Princípios de física</p>
      <h2 class="mt-3 font-semibold text-2xl sm:text-3xl text-[#102a3c]">Ciência para encontrar um caminho</h2>
      
@@ -249,9 +258,11 @@ A vela, que a tormenta grande inchava."</blockquote>
    </section>
 
    <!-- Rodapé -->
-   <footer class="mx-auto flex w-full max-w-4xl flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#c9a76b]/40 bg-[#102a3c] px-5 py-6 text-white text-center sm:text-left">
-    <p class="text-[#e4c894]">Mostra Cultural 2026</p>
-    <a href="#inicio" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-md bg-[#c9a76b] px-5 font-semibold text-[#102a3c] hover:bg-[#e4c894]">↑ Voltar ao topo</a>
+   <footer class="bg-[#102a3c] border-t border-[#c9a76b]/40 py-6 text-white">
+    <div class="mx-auto flex max-w-4xl flex-col sm:flex-row items-center justify-between gap-4 px-5 sm:px-8 text-center sm:text-left">
+     <p class="text-[#e4c894]">Mostra Cultural 2026</p>
+     <a href="#inicio" class="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-md bg-[#c9a76b] px-5 font-semibold text-[#102a3c] hover:bg-[#e4c894]">↑ Voltar ao topo</a>
+    </div>
    </footer>
   </main>
 
