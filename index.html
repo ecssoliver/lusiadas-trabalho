@@ -13,7 +13,6 @@
     html { scroll-behavior:smooth; }
     body { margin:0; font-family:'Libre Franklin',sans-serif; color:var(--navy); background:#f8f5ed; }
     
-    /* Fonte American Typewriter aplicada nos títulos */
     h1, h2, h3, .display, .section-title { 
       font-family: 'American Typewriter', 'Courier New', Courier, Georgia, serif; 
     }
@@ -25,14 +24,12 @@
     }
     .rule { border-color:rgba(161,124,63,.38); }
     
-    /* Painéis e cartões com a borda dourada */
     .panel { 
       border: 1px solid rgba(16,42,60,.14); 
       border-left: 4px solid var(--gold) !important; 
       box-shadow: 0 12px 35px rgba(16,42,60,.055); 
     }
     
-    /* Hierarquia perfeita: Subtítulo pequeno e elegante */
     .section-kicker { 
       font-family: 'American Typewriter', 'Courier New', Courier, Georgia, serif;
       text-transform: uppercase; 
@@ -42,7 +39,6 @@
       color: #83622d;
     }
     
-    /* Título principal proporcional e imponente */
     .section-title {
       font-size: 1.6rem;
       font-weight: 700;
@@ -51,7 +47,6 @@
       line-height: 1.25;
     }
 
-    /* Descrição limpa */
     .section-desc {
       font-family: 'Libre Franklin', sans-serif;
       font-size: 0.95rem;
@@ -60,7 +55,6 @@
       line-height: 1.6;
     }
     
-    /* Scroll horizontal limpo no menu mobile */
     .nav-container::-webkit-scrollbar { display: none; }
     .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
     
@@ -84,12 +78,15 @@
     .star-indicator { transition:transform .5s ease; }
     .star-indicator.shift { transform:rotate(32deg); }
     .modal-open { overflow:hidden; }
+
+    .compass-dial {
+      transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
   </style>
 </head>
 <body class="w-full paper">
   <div id="progress" role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="fixed top-0 left-0 z-50 h-1 bg-[#a17c3f]" style="width:0%"></div>
   
-  <!-- Barra de Navegação -->
   <nav aria-label="Navegação pelas seções" class="sticky top-0 z-40 w-full border-b rule bg-[#f8f5ed]/95 backdrop-blur">
    <div class="nav-container mx-auto flex max-w-4xl items-center gap-2 overflow-x-auto px-4 py-2 sm:px-6">
     <a class="nav-link" href="#inicio">Início</a> 
@@ -97,10 +94,10 @@
     <a class="nav-link" href="#instrumentos">Instrumentos</a> 
     <a class="nav-link" href="#galeria">Galeria</a> 
     <a class="nav-link" href="#fisica">Física</a>
+    <a class="nav-link font-bold text-[#83622d]" href="#desafio">⚓ Quiz & Tesouro</a>
    </div>
   </nav>
 
-  <!-- Cabeçalho Principal -->
   <header id="inicio" class="relative overflow-hidden bg-[#102a3c] text-white">
    <div class="pointer-events-none absolute -right-20 top-8 h-72 w-72 rounded-full border border-[#a17c3f]/30 sm:h-96 sm:w-96"></div>
    <div class="pointer-events-none absolute -right-6 top-24 h-48 w-48 rounded-full border border-[#a17c3f]/20 sm:h-72 sm:w-72"></div>
@@ -118,14 +115,12 @@
 
   <main class="w-full">
    
-   <!-- 01 / Literatura e Composição Musical -->
    <section id="literatura" class="py-14">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
       <p class="section-kicker">01 / Literatura & Música</p>
       <h2 class="section-title">Quando o mar entra na narrativa</h2>
       <p class="section-desc">No Canto VI de Os Lusíadas, a viagem dos navegadores enfrenta uma tempestade. O episódio aproxima a força da natureza das escolhas humanas no mar.</p>
       
-      <!-- Cartão com Borda Dourada -->
       <div class="panel mt-6 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
        <p class="section-kicker text-[#83622d]">e se transformar um trecho em melodia ...</p>
        <blockquote class="mt-4 italic leading-relaxed text-[#354a57] text-lg sm:text-xl">"O mar com a tempestade em cima brada;<br>
@@ -149,7 +144,6 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- 02 / Instrumentos -->
    <section id="instrumentos" class="bg-[#eaece8] py-14">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
      <p class="section-kicker">02 / Instrumentos</p>
@@ -161,7 +155,6 @@ A vela, que a tormenta grande inchava."</blockquote>
       <button id="tab-quadrante" role="tab" aria-controls="panel-quadrante" aria-selected="false" tabindex="-1" type="button" class="tab min-h-12 flex-1 rounded-md px-4 font-semibold text-sm sm:text-base">Quadrante</button>
      </div>
      
-     <!-- Cartão do Astrolábio -->
      <div id="panel-astrolabio" role="tabpanel" aria-labelledby="tab-astrolabio" tabindex="0" class="panel mt-4 rounded-lg bg-[#fffdf8] p-6 sm:p-9">
       <div class="grid gap-7 sm:grid-cols-[auto_1fr] sm:items-center">
        <div class="flex h-36 w-36 items-center justify-center rounded-full border-2 border-[#a17c3f] bg-[#f5f0e5] mx-auto sm:mx-0">
@@ -175,7 +168,6 @@ A vela, que a tormenta grande inchava."</blockquote>
       </div>
      </div>
      
-     <!-- Cartão do Quadrante -->
      <div id="panel-quadrante" role="tabpanel" aria-labelledby="tab-quadrante" tabindex="0" hidden class="panel mt-4 rounded-lg bg-[#fffdf8] p-6 sm:p-9">
       <div class="grid gap-7 sm:grid-cols-[auto_1fr] sm:items-center">
        <div class="flex h-36 w-36 items-center justify-center rounded-tr-full border-2 border-[#a17c3f] bg-[#f5f0e5] mx-auto sm:mx-0">
@@ -192,7 +184,6 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- 03 / Galeria -->
    <section id="galeria" class="py-14">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
      <p class="section-kicker">03 / Galeria</p>
@@ -200,8 +191,6 @@ A vela, que a tormenta grande inchava."</blockquote>
      <p class="section-desc">Fotos reais das peças produzidas para o trabalho.</p>
      
      <div class="mt-6 grid gap-5 sm:grid-cols-2">
-      
-      <!-- FOTO 1: CARAVELA -->
       <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
        <div class="relative aspect-[4/3] w-full overflow-hidden bg-[#f5f0e5] flex items-center justify-center border-b border-[#a17c3f]/20">
         <img id="img-caravel" src="caravela.jpg" alt="Réplica da Caravela" class="h-full w-full object-cover" onerror="this.style.display='none'; document.getElementById('placeholder-caravel').style.display='flex';">
@@ -215,7 +204,6 @@ A vela, que a tormenta grande inchava."</blockquote>
        </div>
       </article>
       
-      <!-- FOTO 2: INSTRUMENTO -->
       <article class="panel overflow-hidden rounded-lg bg-[#fffdf8]">
        <div class="relative aspect-[4/3] w-full overflow-hidden bg-[#f5f0e5] flex items-center justify-center border-b border-[#a17c3f]/20">
         <img id="img-instrument" src="instrumento.jpg" alt="Réplica do Instrumento" class="h-full w-full object-cover" onerror="this.style.display='none'; document.getElementById('placeholder-instrument').style.display='flex';">
@@ -233,58 +221,66 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- 04 / Princípios de Física -->
+<!-- 04 / Princípios de Física -->
    <section id="fisica" class="bg-[#eaece8] py-14">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
      <p class="section-kicker">04 / Princípios de física</p>
      <h2 class="section-title">Ciência para encontrar um caminho</h2>
      <p class="section-desc">Entenda os fundamentos físicos e astronômicos utilizados na navegação quinhentista.</p>
      
-     <div class="mt-6 grid gap-5 lg:grid-cols-2">
+     <div class="mt-6 grid gap-5 lg:grid-cols-2 items-stretch">
       
       <!-- Cartão Estrela Polar -->
-      <article class="panel rounded-lg bg-[#fffdf8] p-6">
-       <h3 class="font-semibold text-lg text-[#102a3c]" style="font-family: 'American Typewriter', serif;">Estrela Polar</h3>
-       <p class="mt-3 leading-relaxed text-[#374c59]">No hemisfério norte, sua posição próxima da direção norte oferece uma referência visual para a orientação.</p>
-       <div class="diagram mt-4 flex h-44 items-center justify-center rounded-md border rule" role="img" aria-label="Diagrama ilustrativo: estrela de referência ao norte e direção de orientação">
-        <div id="star-indicator" class="star-indicator text-center">
-         <div class="text-4xl text-[#a17c3f]" aria-hidden="true">✦</div>
-         <div class="mt-2 text-3xl text-[#102a3c]" aria-hidden="true">↑</div>
+      <article class="panel rounded-lg bg-[#fffdf8] p-6 flex flex-col justify-between h-full">
+       <div class="flex flex-col flex-1">
+        <h3 class="font-semibold text-lg text-[#102a3c]" style="font-family: 'American Typewriter', serif;">Estrela Polar</h3>
+        <p class="mt-3 leading-relaxed text-[#374c59]">No hemisfério norte, sua posição próxima da direção norte oferece uma referência visual para a orientação.</p>
+        <div class="diagram mt-auto pt-4 flex h-44 w-full items-center justify-center rounded-md border rule" role="img" aria-label="Diagrama ilustrativo: estrela de referência ao norte e direção de orientação">
+         <div id="star-indicator" class="star-indicator text-center">
+          <div class="text-4xl text-[#a17c3f]" aria-hidden="true">✦</div>
+          <div class="mt-2 text-3xl text-[#102a3c]" aria-hidden="true">↑</div>
+         </div>
         </div>
        </div>
-       <p class="mt-3 text-sm text-[#4c6170]">✦ Referência celeste  ·  ↑ Direção de orientação</p>
-       <button id="star-toggle" type="button" aria-pressed="false" class="mt-4 min-h-11 w-full rounded-md border border-[#102a3c] px-4 font-semibold hover:bg-[#eaece8]">Mudar a orientação ilustrada</button>
+       <div class="mt-4">
+        <p class="text-sm text-[#4c6170]">✦ Referência celeste  ·  ↑ Direção de orientação</p>
+        <button id="star-toggle" type="button" aria-pressed="false" class="mt-4 min-h-11 w-full rounded-md border border-[#102a3c] px-4 font-semibold hover:bg-[#eaece8]">Mudar a orientação ilustrada</button>
+       </div>
       </article>
 
       <!-- Cartão Vetorização de Ventos -->
-      <article class="panel rounded-lg bg-[#fffdf8] p-6">
-       <h3 class="font-semibold text-lg text-[#102a3c]" style="font-family: 'American Typewriter', serif;">Vetorização de Ventos</h3>
-       <p class="mt-3 leading-relaxed text-[#374c59]">Setas representam direções. Ao considerar o vento e o rumo da embarcação, a composição vetorial ajuda a visualizar o movimento ao navegar à bolina.</p>
-       <div id="vector-diagram" class="diagram mt-4 flex h-44 items-center justify-center rounded-md border rule" role="img" aria-label="Diagrama conceitual: setas para vento, rumo da embarcação e resultante">
-        <svg viewBox="0 0 280 170" width="260" height="150" aria-hidden="true">
-         <defs>
-          <marker id="tip" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
-           <path d="M0 0 L7 3.5 L0 7 Z" fill="context-stroke"></path>
-          </marker>
-         </defs> 
-         <g class="arrow wind" stroke="#a17c3f" stroke-width="4" fill="none" marker-end="url(#tip)">
-          <path d="M75 125 L75 34"></path>
-         </g> 
-         <g class="arrow course" stroke="#102a3c" stroke-width="4" fill="none" marker-end="url(#tip)">
-          <path d="M75 125 L191 125"></path>
-         </g> 
-         <g class="arrow result" stroke="#527d78" stroke-width="4" fill="none" marker-end="url(#tip)">
-          <path d="M75 125 L180 48"></path>
-         </g> 
-         <circle cx="75" cy="125" r="5" fill="#102a3c"></circle>
-        </svg>
+      <article class="panel rounded-lg bg-[#fffdf8] p-6 flex flex-col justify-between h-full">
+       <div class="flex flex-col flex-1">
+        <h3 class="font-semibold text-lg text-[#102a3c]" style="font-family: 'American Typewriter', serif;">Vetorização de Ventos</h3>
+        <p class="mt-3 leading-relaxed text-[#374c59]">Setas representam direções. Ao considerar o vento e o rumo da embarcação, a composição vetorial ajuda a visualizar o movimento ao navegar à bolina.</p>
+        <div id="vector-diagram" class="diagram mt-auto pt-4 flex h-44 w-full items-center justify-center rounded-md border rule" role="img" aria-label="Diagrama conceitual: setas para vento, rumo da embarcação e resultante">
+         <svg viewBox="0 0 280 170" width="260" height="150" aria-hidden="true">
+          <defs>
+           <marker id="tip" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+            <path d="M0 0 L7 3.5 L0 7 Z" fill="context-stroke"></path>
+           </marker>
+          </defs> 
+          <g class="arrow wind" stroke="#a17c3f" stroke-width="4" fill="none" marker-end="url(#tip)">
+           <path d="M75 125 L75 34"></path>
+          </g> 
+          <g class="arrow course" stroke="#102a3c" stroke-width="4" fill="none" marker-end="url(#tip)">
+           <path d="M75 125 L191 125"></path>
+          </g> 
+          <g class="arrow result" stroke="#527d78" stroke-width="4" fill="none" marker-end="url(#tip)">
+           <path d="M75 125 L180 48"></path>
+          </g> 
+          <circle cx="75" cy="125" r="5" fill="#102a3c"></circle>
+         </svg>
+        </div>
        </div>
-       <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#374c59]">
-        <li><span aria-hidden="true" class="mr-2 text-[#a17c3f]">●</span>Vento</li>
-        <li><span aria-hidden="true" class="mr-2 text-[#102a3c]">●</span>Rumo</li>
-        <li><span aria-hidden="true" class="mr-2 text-[#527d78]">●</span>Resultante</li>
-       </ul>
-       <button id="vector-toggle" type="button" aria-pressed="false" class="mt-4 min-h-11 w-full rounded-md border border-[#102a3c] px-4 font-semibold hover:bg-[#eaece8]">Alterar as direções ilustradas</button>
+       <div class="mt-4">
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#374c59]">
+         <li><span aria-hidden="true" class="mr-2 text-[#a17c3f]">●</span>Vento</li>
+         <li><span aria-hidden="true" class="mr-2 text-[#102a3c]">●</span>Rumo</li>
+         <li><span aria-hidden="true" class="mr-2 text-[#527d78]">●</span>Resultante</li>
+        </ul>
+        <button id="vector-toggle" type="button" aria-pressed="false" class="mt-4 min-h-11 w-full rounded-md border border-[#102a3c] px-4 font-semibold hover:bg-[#eaece8]">Alterar as direções ilustradas</button>
+       </div>
       </article>
 
      </div>
@@ -292,7 +288,92 @@ A vela, que a tormenta grande inchava."</blockquote>
     </div>
    </section>
 
-   <!-- Rodapé -->
+   <section id="desafio" class="py-14 bg-[#f1ede2] border-t border-[#c9a76b]/30">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+     <p class="section-kicker">05 / Quiz Interativo & Premiação</p>
+     <h2 class="section-title">A Bússola do Destino & O Tesouro</h2>
+     <p class="section-desc">Descubra qual é o seu perfil de navegador no Canto VI e resgate seu prêmio no estande!</p>
+
+     <div id="quiz-step-1" class="panel mt-6 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm">
+      <h3 class="text-xl font-bold text-[#102a3c] mb-2" style="font-family: 'American Typewriter', serif;">A tempestade do Canto VI caiu sobre a caravela! Como você reage ao mar revolto?</h3>
+      <p class="text-sm text-[#4c6170] mb-6">Selecione uma opção abaixo para descobrir sua função na tripulação:</p>
+      
+      <div class="grid gap-3 sm:grid-cols-2">
+       <button onclick="selectProfile('gama')" class="flex flex-col text-left p-4 rounded-lg border border-[#102a3c]/20 hover:border-[#a17c3f] hover:bg-[#f8f5ed] transition group">
+        <span class="font-bold text-[#102a3c] text-base group-hover:text-[#a17c3f]">⚓ Opção A</span>
+        <span class="text-xs text-[#374c59] mt-1">Mantenho o leme firme com liderança e sigo a rota traçada.</span>
+       </button>
+
+       <button onclick="selectProfile('sabio')" class="flex flex-col text-left p-4 rounded-lg border border-[#102a3c]/20 hover:border-[#a17c3f] hover:bg-[#f8f5ed] transition group">
+        <span class="font-bold text-[#102a3c] text-base group-hover:text-[#a17c3f]">🧭 Opção B</span>
+        <span class="text-xs text-[#374c59] mt-1">Consulto o astrolábio e os astros para recalcular o caminho.</span>
+       </button>
+
+       <button onclick="selectProfile('veloso')" class="flex flex-col text-left p-4 rounded-lg border border-[#102a3c]/20 hover:border-[#a17c3f] hover:bg-[#f8f5ed] transition group">
+        <span class="font-bold text-[#102a3c] text-base group-hover:text-[#a17c3f]">⚔️ Opção C</span>
+        <span class="text-xs text-[#374c59] mt-1">Viro para o vento de peito aberto, pronto para o desafio!</span>
+       </button>
+
+       <button onclick="selectProfile('guardiao')" class="flex flex-col text-left p-4 rounded-lg border border-[#102a3c]/20 hover:border-[#a17c3f] hover:bg-[#f8f5ed] transition group">
+        <span class="font-bold text-[#102a3c] text-base group-hover:text-[#a17c3f]">🌊 Opção D</span>
+        <span class="text-xs text-[#374c59] mt-1">Ajusto as velas à bolina e me adapto à força das ondas.</span>
+       </button>
+      </div>
+     </div>
+
+     <div id="quiz-step-2" hidden class="panel mt-6 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm text-center">
+      <div id="profile-card" class="p-6 rounded-xl border border-[#a17c3f]/40 bg-[#f8f5ed] max-w-lg mx-auto mb-6">
+       <div id="profile-icon" class="text-5xl mb-3">⚓</div>
+       <p class="section-kicker">Seu perfil no Canto VI</p>
+       <h3 id="profile-title" class="text-2xl font-bold text-[#102a3c] mt-1" style="font-family: 'American Typewriter', serif;">O Piloto Destemido</h3>
+       <p id="profile-desc" class="text-sm text-[#374c59] mt-3 leading-relaxed">Assim como Vasco da Gama na tempestade, você mantém a calma e o rumo certo mesmo quando o mar revolta!</p>
+      </div>
+
+      <div class="relative w-44 h-44 mx-auto mb-6 flex items-center justify-center">
+       <div id="compass" class="compass-dial w-full h-full rounded-full border-4 border-[#a17c3f] bg-[#102a3c] flex items-center justify-center text-white font-bold relative shadow-lg">
+        <div class="absolute top-2 text-xs text-[#e4c894]">N</div>
+        <div class="absolute right-2 text-xs text-[#e4c894]">E</div>
+        <div class="absolute bottom-2 text-xs text-[#e4c894]">S</div>
+        <div class="absolute left-2 text-xs text-[#e4c894]">O</div>
+        <div class="w-1.5 h-28 bg-gradient-to-b from-red-500 via-white to-[#a17c3f] rounded-full shadow-md"></div>
+       </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+       <button id="spin-btn" onclick="spinCompass()" class="min-h-12 w-full sm:w-auto rounded-md bg-[#a17c3f] px-8 font-bold text-white transition hover:bg-[#83622d] shadow-md">Girar Bússola & Resgatar Tesouro ➔</button>
+       <button id="back-step2-btn" onclick="confirmResetQuiz()" class="min-h-12 w-full sm:w-auto rounded-md border border-[#102a3c]/30 px-5 text-xs font-semibold text-[#4c6170] hover:bg-[#f8f5ed]">↩ Voltar e trocar resposta</button>
+      </div>
+     </div>
+
+     <div id="quiz-step-3" hidden class="panel mt-6 rounded-lg bg-[#fffdf8] p-6 sm:p-9 shadow-sm text-center border-t-4 border-[#a17c3f]">
+      <div id="redeem-badge" class="text-5xl mb-3">🎁</div>
+      <p id="redeem-subtitle" class="section-kicker">Parabéns, Navegador!</p>
+      <h3 id="redeem-main-title" class="text-2xl font-bold text-[#102a3c] mt-1" style="font-family: 'American Typewriter', serif;">Você conquistou seu prêmio!</h3>
+      <p id="prize-name" class="text-xl font-bold text-[#a17c3f] mt-2">Mar em Pote</p>
+      
+      <div class="mt-6 p-4 rounded-lg bg-[#102a3c] text-white max-w-sm mx-auto border border-[#a17c3f]">
+       <p class="text-xs text-[#e4c894] uppercase tracking-widest font-bold">Código do Voucher de Resgate</p>
+       <p id="coupon-code" class="text-2xl font-mono font-bold tracking-wider text-white mt-1">AGUARDANDO ESTANDE</p>
+       <p id="redeem-status-msg" class="text-xs text-gray-300 mt-2">Apresente este celular para os alunos no estande para resgatar!</p>
+      </div>
+
+      <div id="redeem-actions" class="mt-6 flex flex-col items-center gap-3">
+       <button id="redeem-btn" onclick="requestEstandePIN()" class="min-h-11 w-full sm:w-auto rounded-md bg-emerald-700 px-6 font-bold text-white transition hover:bg-emerald-800 shadow-sm">
+        🔒 Confirmar Resgate no Estande
+       </button>
+       <button id="cancel-voucher-btn" onclick="confirmResetQuiz(true)" class="text-xs text-red-700 underline font-semibold hover:text-red-900">
+        ⚠️ Voltar (desistir e perder este prêmio)
+       </button>
+      </div>
+
+      <div id="redeemed-info" hidden class="mt-4 text-xs font-semibold text-emerald-800 bg-emerald-50 p-3 rounded-md border border-emerald-300 inline-block">
+       ✓ Este voucher já foi entregue e resgatado!
+      </div>
+     </div>
+
+    </div>
+   </section>
+
    <footer class="bg-[#102a3c] border-t border-[#c9a76b]/40 py-6 text-white">
     <div class="mx-auto flex max-w-4xl flex-col sm:flex-row items-center justify-between gap-4 px-5 sm:px-8 text-center sm:text-left">
      <p class="text-[#e4c894]">Mostra Cultural 2026</p>
@@ -301,7 +382,6 @@ A vela, que a tormenta grande inchava."</blockquote>
    </footer>
   </main>
 
-  <!-- Modal da Galeria -->
   <div id="gallery-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-[#071924]/85 p-4" role="dialog" aria-modal="true" aria-label="Visualização ampliada da réplica">
    <div class="w-full max-w-2xl rounded-lg bg-[#fffdf8] p-5 shadow-2xl sm:p-7">
     <div class="flex justify-end">
@@ -325,6 +405,218 @@ A vela, que a tormenta grande inchava."</blockquote>
   </div>
 
   <script>
+    const profiles = {
+      gama: {
+        icon: '⚓',
+        title: 'O Piloto Destemido (Vasco da Gama)',
+        desc: 'Assim como Vasco da Gama na tempestade, você mantém a calma e o rumo certo mesmo quando o mar revolta!',
+        prize: 'Mar em Pote'
+      },
+      sabio: {
+        icon: '🧭',
+        title: 'O Mestre Náutico & Astrônomo',
+        desc: 'Sua força está na observação! Com a Estrela Polar e o Astrolábio na mão, nenhuma tempestade te pega desprevenido.',
+        prize: 'Tesouro do Mar'
+      },
+      veloso: {
+        icon: '⚔️',
+        title: 'O Cavaleiro da Aventura (Veloso)',
+        desc: 'Você é a força e o entusiasmo da nau! Para você, o perigo e os ventos irados são apenas o tempero de uma grande aventura.',
+        prize: 'Mar em Pote'
+      },
+      guardiao: {
+        icon: '🌊',
+        title: 'O Guardião dos Mares',
+        desc: 'Você entende a física dos ventos e o ritmo das águas! Sabe dobrar as velas e adaptar o rumo com sabedoria.',
+        prize: 'Tesouro do Mar'
+      }
+    };
+
+    let selectedProfileKey = 'gama';
+    const ESTANDE_PIN = "2026";
+    const QA_RESET_PIN = "9999"; 
+    let isSpinning = false; 
+
+    function getNextCouponNumber() {
+      const today = new Date().toISOString().split('T')[0];
+      const savedDate = localStorage.getItem('canto6_coupon_date');
+      let currentCount = parseInt(localStorage.getItem('canto6_coupon_count') || '0', 10);
+
+      if (savedDate !== today) {
+        currentCount = 0;
+        localStorage.setItem('canto6_coupon_date', today);
+      }
+
+      currentCount += 1;
+      localStorage.setItem('canto6_coupon_count', currentCount.toString());
+      return String(currentCount).padStart(4, '0');
+    }
+
+    function checkAlreadyRedeemed() {
+      const today = new Date().toISOString().split('T')[0];
+      const redeemedData = localStorage.getItem('canto6_user_redeemed');
+      
+      if (redeemedData) {
+        const parsed = JSON.parse(redeemedData);
+        if (parsed.date === today) {
+          return parsed;
+        }
+      }
+      return null;
+    }
+
+    function selectProfile(type) {
+      if (isSpinning) return;
+      if (checkAlreadyRedeemed()) {
+        showAlreadyRedeemedScreen(checkAlreadyRedeemed());
+        return;
+      }
+
+      selectedProfileKey = type;
+      const p = profiles[type];
+      document.getElementById('profile-icon').textContent = p.icon;
+      document.getElementById('profile-title').textContent = p.title;
+      document.getElementById('profile-desc').textContent = p.desc;
+      
+      document.getElementById('quiz-step-1').hidden = true;
+      document.getElementById('quiz-step-2').hidden = false;
+      document.getElementById('quiz-step-2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function spinCompass() {
+      if (isSpinning) return; 
+      if (checkAlreadyRedeemed()) {
+        showAlreadyRedeemedScreen(checkAlreadyRedeemed());
+        return;
+      }
+
+      isSpinning = true;
+      const compass = document.getElementById('compass');
+      const btn = document.getElementById('spin-btn');
+      const backBtn = document.getElementById('back-step2-btn');
+      
+      btn.disabled = true;
+      btn.textContent = 'Navegando nas ondas...';
+      backBtn.style.pointerEvents = 'none';
+      backBtn.style.opacity = '0.4';
+      
+      const randomDegrees = 1440 + Math.floor(Math.random() * 360);
+      compass.style.transform = `rotate(${randomDegrees}deg)`;
+
+      setTimeout(() => {
+        const assignedPrize = profiles[selectedProfileKey].prize;
+        
+        document.getElementById('prize-name').textContent = assignedPrize;
+        document.getElementById('coupon-code').textContent = "AGUARDANDO ESTANDE";
+
+        localStorage.setItem('canto6_current_voucher', JSON.stringify({
+          prize: assignedPrize,
+          date: new Date().toISOString().split('T')[0]
+        }));
+
+        document.getElementById('quiz-step-2').hidden = true;
+        document.getElementById('quiz-step-3').hidden = false;
+
+        backBtn.style.pointerEvents = 'auto';
+        backBtn.style.opacity = '1';
+        isSpinning = false;
+
+        document.getElementById('quiz-step-3').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 3200);
+    }
+
+    function confirmResetQuiz(losesPrize = false) {
+      if (isSpinning) return;
+      if (checkAlreadyRedeemed()) return;
+
+      if (losesPrize) {
+        const confirmLoss = confirm("⚠️ ATENÇÃO: Ao voltar, você perderá a chance de resgatar este prêmio atual.\n\nTem certeza que deseja recomeçar o teste?");
+        if (!confirmLoss) return; 
+      }
+
+      localStorage.removeItem('canto6_current_voucher');
+
+      document.getElementById('compass').style.transform = 'rotate(0deg)';
+      const spinBtn = document.getElementById('spin-btn');
+      spinBtn.disabled = false;
+      spinBtn.textContent = 'Girar Bússola & Resgatar Tesouro ➔';
+
+      document.getElementById('quiz-step-2').hidden = true;
+      document.getElementById('quiz-step-3').hidden = true;
+      document.getElementById('quiz-step-1').hidden = false;
+      document.getElementById('quiz-step-1').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function requestEstandePIN() {
+      if (checkAlreadyRedeemed()) return;
+
+      const inputPin = prompt("🔑 [Acesso do Estande]\nDigite a senha da equipe para confirmar a entrega do prêmio:");
+      if (!inputPin) return;
+
+      if (inputPin === QA_RESET_PIN) {
+        localStorage.removeItem('canto6_user_redeemed');
+        localStorage.removeItem('canto6_current_voucher');
+        localStorage.removeItem('canto6_coupon_count'); 
+        alert("🧪 Modo QA: Teste e cache totalmente limpos!");
+        location.reload();
+        return;
+      }
+
+      if (inputPin === ESTANDE_PIN) {
+        markAsRedeemed();
+      } else {
+        alert("❌ Senha incorreta! Apenas a equipe do estande pode confirmar.");
+      }
+    }
+
+    function markAsRedeemed() {
+      const today = new Date().toISOString().split('T')[0];
+      const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+      
+      const couponNum = getNextCouponNumber();
+      const fullCode = 'CANTO6-' + couponNum;
+      
+      const currentVoucher = JSON.parse(localStorage.getItem('canto6_current_voucher') || '{}');
+      const prize = currentVoucher.prize || 'Mar em Pote';
+
+      const redeemData = {
+        date: today,
+        time: time,
+        code: fullCode,
+        prize: prize
+      };
+
+      localStorage.setItem('canto6_user_redeemed', JSON.stringify(redeemData));
+      localStorage.removeItem('canto6_current_voucher');
+      showAlreadyRedeemedScreen(redeemData);
+    }
+
+    function showAlreadyRedeemedScreen(data) {
+      document.getElementById('quiz-step-1').hidden = true;
+      document.getElementById('quiz-step-2').hidden = true;
+      const step3 = document.getElementById('quiz-step-3');
+      step3.hidden = false;
+
+      document.getElementById('redeem-badge').textContent = '✅';
+      document.getElementById('redeem-subtitle').textContent = 'Voucher Utilizado';
+      document.getElementById('redeem-main-title').textContent = 'Prêmio Entregue!';
+      document.getElementById('prize-name').textContent = data.prize;
+      document.getElementById('coupon-code').textContent = data.code;
+      document.getElementById('redeem-status-msg').textContent = `Entregue hoje às ${data.time} no estande.`;
+      
+      document.getElementById('redeem-actions').style.display = 'none';
+      document.getElementById('redeemed-info').hidden = false;
+
+      step3.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const alreadyRedeemed = checkAlreadyRedeemed();
+      if (alreadyRedeemed) {
+        showAlreadyRedeemedScreen(alreadyRedeemed);
+      }
+    });
+
     const tabs = [...document.querySelectorAll('[role="tab"]')];
     function selectTab(index, focus = false) {
       tabs.forEach((tab, i) => {
@@ -364,10 +656,14 @@ A vela, que a tormenta grande inchava."</blockquote>
     for (const [buttonId, targetId] of [
       ['star-toggle', 'star-indicator'], ['vector-toggle', 'vector-diagram']
     ]) {
-      document.getElementById(buttonId).addEventListener('click', event => {
-        const changed = document.getElementById(targetId).classList.toggle('shift');
-        event.currentTarget.setAttribute('aria-pressed', String(changed));
-      });
+      const btn = document.getElementById(buttonId);
+      if (btn) {
+        btn.addEventListener('click', event => {
+          const target = document.getElementById(targetId);
+          const changed = target.classList.toggle('shift');
+          event.currentTarget.setAttribute('aria-pressed', String(changed));
+        });
+      }
     }
   </script>
 </body>
