@@ -367,7 +367,6 @@ A vela, que a tormenta grande inchava."</blockquote>
       </div>
 
       <!-- ADICIONADO O "hidden" AQUI PARA SUMIR ENQUANTO ESTIVER AGUARDANDO O ESTANDE -->
-      <!-- O 'hidden' DEVE estar escrito aqui na tag do elemento -->
       <div id="redeemed-info" hidden class="mt-4 text-xs font-semibold text-emerald-800 bg-emerald-50 p-3 rounded-md border border-emerald-300 inline-block">
        ✓ Este voucher já foi entregue e resgatado!
       </div>
@@ -599,6 +598,9 @@ A vela, que a tormenta grande inchava."</blockquote>
       const step3 = document.getElementById('quiz-step-3');
       step3.hidden = false;
 
+      const redeemedInfo = document.getElementById('redeemed-info');
+      const redeemActions = document.getElementById('redeem-actions');
+
       if (isAlreadyRescued) {
         document.getElementById('redeem-badge').textContent = '✅';
         document.getElementById('redeem-subtitle').textContent = 'Voucher Utilizado';
@@ -607,11 +609,11 @@ A vela, que a tormenta grande inchava."</blockquote>
         document.getElementById('coupon-code').textContent = data.code;
         document.getElementById('redeem-status-msg').textContent = `Entregue hoje às ${data.time} no estande.`;
         
-        // Exibe a mensagem de resgatado e esconde os botões de ação do estande
-        document.getElementById('redeem-actions').style.display = 'none';
-        document.getElementById('redeemed-info').hidden = false;
+        // Exibe a mensagem verde e esconde os botões de ação
+        redeemActions.style.display = 'none';
+        redeemedInfo.hidden = false;
       } else {
-        // Estado pendente (aguardando o código do estande) — a mensagem verde fica oculta!
+        // Estado pendente (aguardando estande): ESCONDE a mensagem verde obrigatoriamente
         document.getElementById('redeem-badge').textContent = '🎁';
         document.getElementById('redeem-subtitle').textContent = 'Parabéns, Navegador!';
         document.getElementById('redeem-main-title').textContent = 'Você conquistou seu prêmio!';
@@ -619,8 +621,8 @@ A vela, que a tormenta grande inchava."</blockquote>
         document.getElementById('coupon-code').textContent = "AGUARDANDO ESTANDE";
         document.getElementById('redeem-status-msg').textContent = "Apresente este celular para os alunos no estande para resgatar!";
         
-        document.getElementById('redeem-actions').style.display = 'flex';
-        document.getElementById('redeemed-info').hidden = true; // Garante que fica invisível aqui
+        redeemActions.style.display = 'flex';
+        redeemedInfo.hidden = true; // Garante que fica oculto
       }
 
       step3.scrollIntoView({ behavior: 'smooth', block: 'center' });
