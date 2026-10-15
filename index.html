@@ -592,21 +592,35 @@ A vela, que a tormenta grande inchava."</blockquote>
       showAlreadyRedeemedScreen(redeemData);
     }
 
-    function showAlreadyRedeemedScreen(data) {
+    function showAlreadyRedeemedScreen(data, isAlreadyRescued = true) {
       document.getElementById('quiz-step-1').hidden = true;
       document.getElementById('quiz-step-2').hidden = true;
       const step3 = document.getElementById('quiz-step-3');
       step3.hidden = false;
 
-      document.getElementById('redeem-badge').textContent = '✅';
-      document.getElementById('redeem-subtitle').textContent = 'Voucher Utilizado';
-      document.getElementById('redeem-main-title').textContent = 'Prêmio Entregue!';
-      document.getElementById('prize-name').textContent = data.prize;
-      document.getElementById('coupon-code').textContent = data.code;
-      document.getElementById('redeem-status-msg').textContent = `Entregue hoje às ${data.time} no estande.`;
-      
-      document.getElementById('redeem-actions').style.display = 'none';
-      document.getElementById('redeemed-info').hidden = false;
+      if (isAlreadyRescued) {
+        document.getElementById('redeem-badge').textContent = '✅';
+        document.getElementById('redeem-subtitle').textContent = 'Voucher Utilizado';
+        document.getElementById('redeem-main-title').textContent = 'Prêmio Entregue!';
+        document.getElementById('prize-name').textContent = data.prize;
+        document.getElementById('coupon-code').textContent = data.code;
+        document.getElementById('redeem-status-msg').textContent = `Entregue hoje às ${data.time} no estande.`;
+        
+        // Exibe a mensagem de resgatado e esconde os botões de ação do estande
+        document.getElementById('redeem-actions').style.display = 'none';
+        document.getElementById('redeemed-info').hidden = false;
+      } else {
+        // Estado pendente (aguardando o código do estande) — a mensagem verde fica oculta!
+        document.getElementById('redeem-badge').textContent = '🎁';
+        document.getElementById('redeem-subtitle').textContent = 'Parabéns, Navegador!';
+        document.getElementById('redeem-main-title').textContent = 'Você conquistou seu prêmio!';
+        document.getElementById('prize-name').textContent = data.prize;
+        document.getElementById('coupon-code').textContent = "AGUARDANDO ESTANDE";
+        document.getElementById('redeem-status-msg').textContent = "Apresente este celular para os alunos no estande para resgatar!";
+        
+        document.getElementById('redeem-actions').style.display = 'flex';
+        document.getElementById('redeemed-info').hidden = true; // Garante que fica invisível aqui
+      }
 
       step3.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -614,7 +628,17 @@ A vela, que a tormenta grande inchava."</blockquote>
     window.addEventListener('DOMContentLoaded', () => {
       const alreadyRedeemed = checkAlreadyRedeemed();
       if (alreadyRedeemed) {
-        showAlreadyRedeemedScreen(alreadyRedeemed);
+        showAlreadyRedeemedScreen(alreadyRedeemed, true);
+        return;
+      }
+
+      const currentVoucher = localStorage.getItem('canto6_current_voucher');
+      if (currentVoucher) {
+        const parsedVoucher = JSON.parse(currentVoucher);
+        const today = new Date().toISOString().split('T')[0];
+        if (parsedVoucher.date === today) {
+          showAlreadyRedeemedScreen(parsedVoucher, false);
+        }
       }
     });
 
